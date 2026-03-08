@@ -53,7 +53,7 @@ export default function Contact() {
             {[
               ['✉', 'contacta.izan@gmail.com'],
               ['📍', 'Mataró, Barcelona'],
-              ['⚡', 'Estudiando'],
+              ['⚡', 'Disponible para trabajar'],
             ].map(([icon, text]) => (
               <div key={text} style={{
                 display:'flex', alignItems:'center', gap:16,
