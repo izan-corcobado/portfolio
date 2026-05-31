@@ -7,6 +7,8 @@ import {
   GitOriginal,
   LinuxOriginal,
   AmazonwebservicesOriginalWordmark,
+  WordpressOriginal,
+  GithubOriginal,
 } from 'devicons-react'
 
 const CATEGORIES = [
@@ -23,15 +25,24 @@ const CATEGORIES = [
     id: 'backend',
     label: 'Backend & Scripting',
     skills: [
-{ id:'python', label:'Python', color:'#FFD43B', Icon: PythonOriginal, level:'Beginner', desc:'Scripts, automatización, fundamentos.' },    ]
+      { id:'python', label:'Python', color:'#FFD43B', Icon: PythonOriginal, level:'Beginner', desc:'Scripts, automatización, fundamentos.' },
+    ]
   },
   {
     id: 'devops',
     label: 'DevOps & Cloud',
     skills: [
-      { id:'aws',   label:'AWS',   color:'#FF9900', Icon: AmazonwebservicesOriginalWordmark, level:'Beginner',     desc:'En formación. EC2, S3, fundamentos de cloud computing.' },
-      { id:'git',   label:'Git',   color:'#F05032', Icon: GitOriginal,                      level:'Beginner',     desc:'Control de versiones, repositorios, flujo básico.' },
-      { id:'linux', label:'Linux', color:'#FCC624', Icon: LinuxOriginal,                    level:'Intermediate', desc:'Administración básica, terminal, comandos de sistema.' },
+      { id:'aws',    label:'AWS',    color:'#FF9900', Icon: AmazonwebservicesOriginalWordmark, level:'Beginner',     desc:'En formación. EC2, S3, fundamentos de cloud computing.' },
+      { id:'git',    label:'Git',    color:'#F05032', Icon: GitOriginal,                      level:'Beginner',     desc:'Control de versiones, repositorios, flujo básico.' },
+      { id:'github', label:'GitHub', color:'#E6EDF3', Icon: GithubOriginal,                   level:'Beginner',     desc:'Uso básico: repositorios, commits y push. Aprendiendo el flujo de trabajo.' },
+      { id:'linux',  label:'Linux',  color:'#FCC624', Icon: LinuxOriginal,                    level:'Intermediate', desc:'Administración básica, terminal, comandos de sistema.' },
+    ]
+  },
+  {
+    id: 'cms',
+    label: 'CMS',
+    skills: [
+      { id:'wordpress', label:'WordPress', color:'#21759B', Icon: WordpressOriginal, level:'Intermediate', desc:'Creación y gestión de sitios, temas, plugins y personalización.' },
     ]
   },
 ]
@@ -140,7 +151,6 @@ export default function KeyboardScene() {
                       animation:`floatIn .6s ease ${delay}s both`,
                     }}
                   >
-                    {/* Glow fondo */}
                     {(isHovered || isActive) && (
                       <div style={{
                         position:'absolute', inset:0, borderRadius:16,
@@ -149,7 +159,6 @@ export default function KeyboardScene() {
                       }} />
                     )}
 
-                    {/* Icono */}
                     <div style={{
                       width:56, height:56,
                       display:'flex', alignItems:'center', justifyContent:'center',
@@ -170,7 +179,6 @@ export default function KeyboardScene() {
                       <skill.Icon size={32} color={skill.color} />
                     </div>
 
-                    {/* Label */}
                     <span style={{
                       fontFamily:"'Space Mono', monospace",
                       fontSize:11, letterSpacing:2,
@@ -183,7 +191,6 @@ export default function KeyboardScene() {
                       {skill.label}
                     </span>
 
-                    {/* Punto de nivel */}
                     <div style={{
                       width:6, height:6, borderRadius:'50%',
                       background: LEVEL_COLOR[skill.level],
@@ -200,7 +207,6 @@ export default function KeyboardScene() {
         )
       })}
 
-      {/* Panel info */}
       {active && (
         <div style={{
           marginTop:8,
@@ -213,7 +219,6 @@ export default function KeyboardScene() {
           animation:'fadeUp .3s cubic-bezier(.16,1,.3,1)',
           display:'flex', alignItems:'flex-start', gap:24,
         }}>
-          {/* Icono grande */}
           <div style={{
             width:56, height:56, borderRadius:14, flexShrink:0,
             display:'flex', alignItems:'center', justifyContent:'center',
@@ -224,7 +229,6 @@ export default function KeyboardScene() {
             <active.Icon size={32} color={active.color} />
           </div>
 
-          {/* Contenido */}
           <div style={{ flex:1 }}>
             <div style={{
               display:'flex', alignItems:'center',
@@ -258,7 +262,6 @@ export default function KeyboardScene() {
             </p>
           </div>
 
-          {/* Cerrar */}
           <button
             onClick={() => setActive(null)}
             style={{
