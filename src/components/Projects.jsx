@@ -77,6 +77,19 @@ function IconStack() {
     </svg>
   )
 }
+// Nuevo icono para Network Agent: radar de escaneo, coherente con el resto
+// (mismos círculos concéntricos que IconWifi/IconStack, mismo grosor de trazo)
+function IconScan() {
+  return (
+    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+      <circle cx="40" cy="40" r="28" stroke="white" strokeWidth="3" fill="none" strokeOpacity="0.3"/>
+      <circle cx="40" cy="40" r="18" stroke="white" strokeWidth="3" fill="none" strokeOpacity="0.55"/>
+      <circle cx="40" cy="40" r="8" stroke="white" strokeWidth="3" fill="none" strokeOpacity="0.9"/>
+      <line x1="40" y1="40" x2="61" y2="20" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeOpacity="0.9"/>
+      <circle cx="58" cy="23" r="4.5" fill="white" fillOpacity="0.95"/>
+    </svg>
+  )
+}
 
 const projects = [
   {
@@ -133,6 +146,17 @@ const projects = [
     accent: C.gold,
     imageBg: 'linear-gradient(135deg, #a07830 0%, #c9a96e 60%, #dfc088 100%)',
     Icon: IconStack,
+  },
+  {
+    id: '06',
+    title: 'Vigilancia de red',
+    titleAccent: 'con IA.',
+    category: 'Seguridad · IA · Automatización',
+    summary: 'Sistema que escanea la red cada noche con Nmap, analiza el riesgo de cada dispositivo con IA y avisa por email y Telegram cuando detecta algo crítico. Todo visible en un dashboard de Grafana.',
+    tags: ['Python', 'Nmap', 'Groq API', 'SQLite', 'Grafana', 'n8n'],
+    accent: '#5a9fd4',
+    imageBg: 'linear-gradient(135deg, #2c6b96 0%, #5a9fd4 60%, #86c0ea 100%)',
+    Icon: IconScan,
   },
 ]
 
@@ -420,7 +444,7 @@ export default function Projects() {
         color: 'transparent',
         WebkitTextStroke: `1px ${C.border0}`,
         lineHeight: 1, pointerEvents: 'none', userSelect: 'none', zIndex: 0,
-      }}>05</div>
+      }}>06</div>
 
       {/* Glow */}
       <div style={{
@@ -439,7 +463,7 @@ export default function Projects() {
           <div className="pr-label" style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '64px' }}>
             <span style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: C.text2, fontFamily: FONT }}>Proyectos</span>
             <div style={{ flex: 1, height: '1px', background: C.border0 }} />
-            <span style={{ fontSize: '11px', color: C.text2, letterSpacing: '0.12em', fontFamily: FONT }}>05</span>
+            <span style={{ fontSize: '11px', color: C.text2, letterSpacing: '0.12em', fontFamily: FONT }}>06</span>
           </div>
 
           <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '56px', flexWrap: 'wrap', gap: '24px' }}>
